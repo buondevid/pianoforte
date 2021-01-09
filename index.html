@@ -2,50 +2,53 @@
 <html lang="en">
 
 <head>
-  <title>Davide's Piano</title>
+  <title>buondevid's Piano</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,100&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
   <meta name="A JS Piano" content="A piano made with vanilla javascript">
 </head>
 
 <body>
-  <h1>When people tell you: "go <span>forte</span>".... You go <span>PIANO!</span></h1>
+	<h1>When people tell you: "go <span>forte</span>".... You go <span>PIANO!</span></h1>
+	<h2><em>Press a key from A to K to start</em></h2>
 
   <div class="keys">
     <div data-key="65" class="key">
       <kbd>A</kbd>
-      <span class="sound">do</span>
+      <span class="sound">&#9835; do</span>
     </div>
     <div data-key="83" class="key">
       <kbd>S</kbd>
-      <span class="sound">re</span>
+      <span class="sound">&#9835; re</span>
     </div>
     <div data-key="68" class="key">
       <kbd>D</kbd>
-      <span class="sound">mi</span>
+      <span class="sound">&#9835; mi</span>
     </div>
     <div data-key="70" class="key">
       <kbd>F</kbd>
-      <span class="sound">fa</span>
+      <span class="sound">&#9835; fa</span>
     </div>
     <div data-key="71" class="key">
       <kbd>G</kbd>
-      <span class="sound">sol</span>
+      <span class="sound">&#9835; sol</span>
     </div>
     <div data-key="72" class="key">
       <kbd>H</kbd>
-      <span class="sound">la</span>
+      <span class="sound">&#9835; la</span>
     </div>
     <div data-key="74" class="key">
       <kbd>J</kbd>
-      <span class="sound">si</span>
+      <span class="sound">&#9835; si</span>
     </div>
     <div data-key="75" class="key">
       <kbd>K</kbd>
-      <span class="sound">do</span>
+      <span class="sound">&#9835; do</span>
     </div>
   </div>
 
@@ -78,10 +81,13 @@
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend', removeTransition))
 
-    document.addEventListener('keydown', playAudio);
-
-
-
+		document.addEventListener('keydown', playAudio);
+		
+		document.addEventListener('keydown', (e) => {
+			console.log(e);
+			if (e.key.match(/^(a|s|d|f|g|h|j|k)$/i))
+			{document.querySelector('h2').style.display = 'none'};
+		})
   </script>
 
 
