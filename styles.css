@@ -15,6 +15,10 @@ body {
 	font-weight: bold;
 }
 
+code {
+	font-size: 4rem;
+}
+
 .keys {
   display: flex;
   flex: 1;
