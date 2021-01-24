@@ -78,10 +78,9 @@
     const keys = document.querySelectorAll('.key');
     keys.forEach(key => key.addEventListener('transitionend', removeTransition))
 
-		document.addEventListener('keydown', playAudio);
+		document.addEventListener('keyup', playAudio);
 		
 		document.addEventListener('keydown', (e) => {
-			console.log(e);
 			if (e.key.match(/^(a|s|d|f|g|h|j|k)$/i))
 			{document.querySelector('h2').style.display = 'none'};
 		})
